@@ -2,7 +2,7 @@ import "dotenv/config";
 import { z } from "zod";
 
 const schema = z.object({
-  PORT: z.coerce.number().default(5000),
+  PORT: z.coerce.number().default(3000),
 
   NODE_ENV: z
     .enum(["development", "production", "test"])
@@ -12,11 +12,11 @@ const schema = z.object({
 
   SUPABASE_SECRET_KEY: z.string().min(20),
 
-  PHONE_SETUP_KEY: z.string(),
+  PHONE_SETUP_KEY: z.string().optional(),
 
-  PHONESYNC_CLI_TOKEN: z.string(),
+  PHONESYNC_CLI_TOKEN: z.string().optional(),
 
-  PHONESYNC_OWNER_ID: z.string(),
+  PHONESYNC_OWNER_ID: z.string().optional(),
   REGISTRATION_KEY: z.string().optional(),
 
   CORS_ORIGIN: z.string().optional(),

@@ -2,9 +2,9 @@ import express from "express";
 import helmet from "helmet";
 import cors from "cors";
 import devicesRouter from "./routes/devices.js";
-import  syncRouter  from "./routes/sync.js";
+import syncRouter from "./routes/sync.js";
 
-export const app = express();
+const app = express();
 
 app.use(helmet());
 
@@ -35,3 +35,5 @@ app.use((_req, res) => {
     error: "Endpoint not found",
   });
 });
+
+export default app;
